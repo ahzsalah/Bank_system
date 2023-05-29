@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for a Credit Card</title>
+    <script type="text/javascript">
+        function submitForm(e) {
+            e.preventDefault();  
+            let form = document.getElementById('myForm');
+            form.style.display = 'none';  
+            let message = document.getElementById('message');
+            message.style.display = 'block';  
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        input[type="text"],
+         input[type="email"],
+          input[type="tel"],
+           input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container button:hover {
+            opacity: 0.8;
+        } 
+        #message {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Apply for a Credit Card</h2>
+        <form id="myForm" onsubmit="submitForm(event)">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" req>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="income">Annual Income:</label>
+        <input type="number" id="income" name="income" required>
+
+            <button type="submit">Apply</button>
+        </form>
+        <div id="message">
+            <h1>Thank you for submitting the form!</h1>
+                <form action="index.html">
+                    <button>Return to Home Page</button>
+                </form>
+        </div>
+    </div>
+</body>
+</html>
