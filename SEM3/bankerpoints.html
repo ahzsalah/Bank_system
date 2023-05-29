@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.search-container {
+  text-align: center;
+  padding: 20px;
+}
+
+#searchInput {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+#button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        #button:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+
+    <script>
+        function search() {
+  const searchQuery = document.getElementById('searchInput').value.toUpperCase();
+
+  const rows = document.getElementById('pointsTable').getElementsByTagName('tr');
+
+  for (let i = 0; i < rows.length; i++) {
+    const td = rows[i].getElementsByTagName('td')[0];
+    if (td) {
+      const txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(searchQuery) > -1) {
+        rows[i].style.display = '';
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+}
+
+    </script>
+<body>
+
+    <title>Credit Card Points</title>
+
+<h2>Credit Card Points</h2>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for credit card numbers...">
+</div>
+<table id="pointsTable">
+  <tr>
+    <th>Credit Card Number</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>1234-5678-9012-3456</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td>4423-6789-0123-4567</td>
+    <td>500</td>
+  </tr>
+  <tr>
+    <td>6657-6789-0123-4567</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>3354-6789-0123-4567</td>
+    <td>700</td>
+  </tr>
+  <tr>
+    <td>8790-6789-0123-4567</td>
+    <td>1200</td>
+  </tr>
+</table>
+
+<form action="banker.html">
+    <button id="button">Return to Home Page</button>
+</form>
+</body>
+</html>
