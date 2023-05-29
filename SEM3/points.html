@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Points</title>
+    <script>
+        function redeemPoints() {
+            var pointsElement = document.getElementById('points');
+            var points = parseInt(pointsElement.textContent);
+            if (points >= 1000) {
+                pointsElement.textContent = points - 1000;
+                var cashbackElement = document.getElementById('cashback');
+                var cashback = parseInt(cashbackElement.textContent.slice(1));
+                cashbackElement.textContent = '$' + (cashback + 10);
+            }
+        }
+
+        function redeemAllPoints() {
+            var pointsElement = document.getElementById('points');
+            var points = parseInt(pointsElement.textContent);
+            var redeemableAmount = Math.floor(points / 1000);
+            pointsElement.textContent = points - (redeemableAmount * 1000);
+            var cashbackElement = document.getElementById('cashback');
+            var cashback = parseInt(cashbackElement.textContent.slice(1));
+            cashbackElement.textContent = '$' + (cashback + redeemableAmount * 10);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: auto;
+            width: 80%;
+        }
+        .points-container {
+            margin-top: 20px;
+        }
+        .points, .cashback {
+            font-size: 2em;
+            text-align: center;
+        }
+        .redeem-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .redeem-btn:hover {
+            background-color: #45a049;
+        }
+        button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Credit Card Points</h1>
+    <div class="points-container">
+        <p class="points">Points: <span id="points">2000</span></p>
+        <p class="cashback">Cashback: <span id="cashback">$0</span></p>
+        <p>
+            <button class="redeem-btn" onclick="redeemPoints()">Redeem 1000 Points for $10 Cashback</button>
+            <button class="redeem-btn" onclick="redeemAllPoints()">Redeem All Points</button>
+        </p>
+    </div>
+    <form action="index.html">
+        <button>Return to Home Page</button>
+    </form>
+</body>
+</html>

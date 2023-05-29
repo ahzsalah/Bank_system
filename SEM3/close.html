@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Close a Bank Account</title>
+    <script type="text/javascript">
+        function submitForm(e) {
+            e.preventDefault();  
+            let form = document.getElementById('myForm');
+            form.style.display = 'none';  
+            let message = document.getElementById('message');
+            message.style.display = 'block';  
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container button:hover {
+            opacity: 0.8;
+        }
+        #message {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Close a Bank Account</h2>
+        <form id="myForm" onsubmit="submitForm(event)">
+            <label for="accNum">Account Number:</label><br>
+  <input type="text" id="accNum" name="accNum" required><br>
+  
+  <label for="reason">Reason for Closing Account:</label><br>
+  <textarea id="reason" name="reason" rows="4" cols="50"></textarea><br>
+
+  <button type="submit">submit</button>
+</form>
+        
+                
+                <div id="message">
+                    <h1>Account Closed</h1>
+                        <form action="banker.html">
+                            <button>Return to Home Page</button>
+                        </form>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

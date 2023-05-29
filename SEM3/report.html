@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for a Credit Card</title>
+    <script type="text/javascript">
+        function submitForm(e) {
+            e.preventDefault();  
+            let form = document.getElementById('myForm');
+            form.style.display = 'none';  
+            let message = document.getElementById('message');
+            message.style.display = 'block';  
+        }
+    </script>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            width: 80%;
+            margin: auto;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+        .form-container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+            width: 80%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .form-container button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container button:hover {
+            opacity: 0.8;
+        }
+        #message {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Report a Technical Issue</h2>
+        <form id="myForm" onsubmit="submitForm(event)">
+            <label for="issue-title">Issue Title:</label><br>
+        <input type="text" id="issue-title" name="issue-title"><br>
+        <label for="issue-description">Issue Description:</label><br>
+        <textarea id="issue-description" name="issue-description" rows="4" cols="50"></textarea><br>
+            <button type="submit">Apply</button>
+        </form>
+        <div id="message">
+            <h1>Thank you for submitting the form!</h1>
+                <form action="index.html">
+                    <button>Return to Home Page</button>
+                </form>
+        </div>
+    </div>
+</body>
+</html>

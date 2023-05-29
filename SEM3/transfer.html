@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Money</title>
+    <script>
+        function submitTransfer() {
+            var transferTypeElement = document.getElementById('transfer-type');
+            var transferAmountElement = document.getElementById('transfer-amount');
+            var accountNumberElement = document.getElementById('account-number');
+            var transferFormElement = document.querySelector('.transfer-form');
+            var transferMessageElement = document.getElementById('transfer-message');
+            var returnButton = document.getElementById('returnbutton');
+
+            var transferType = transferTypeElement.value;
+            var transferAmount = parseInt(transferAmountElement.value);
+            var accountNumber = accountNumberElement.value;
+
+            if (!isNaN(transferAmount) && transferAmount > 0 && accountNumber !== '') {
+                transferMessageElement.textContent = 'You have successfully transferred $' + transferAmount + ' to account number ' + accountNumber + ' via ' + transferType + ' transfer.';
+                transferFormElement.style.display = 'none';
+                returnButton.style.display = 'block'; // Show return button
+            } else {
+                transferMessageElement.textContent = 'Please enter a valid transfer amount and account number.';
+            }
+
+            return false;  // prevent form submission
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .transfer-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .transfer-form label {
+            font-weight: bold;
+        }
+        .transfer-form input[type="text"],
+        .transfer-form input[type="number"],
+        .transfer-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .transfer-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .transfer-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .transfer-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: green;
+        }
+        button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            clear: both;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        
+    </style>
+</head>
+<body>
+    <form class="transfer-form" onsubmit="return submitTransfer()">
+        <h1>Transfer Money</h1>
+        <label for="transfer-type">Transfer Type:</label><br>
+        <select id="transfer-type" name="transfer-type">
+            <option value="Internal">Internal</option>
+            <option value="Domestic">Domestic</option>
+            <option value="International">International</option>
+        </select><br>
+        <label for="account-number">Account Number to Transfer To:</label><br>
+        <input type="text" id="account-number" name="account-number"><br>
+        <label for="transfer-amount">Transfer Amount:</label><br>
+        <input type="number" id="transfer-amount" name="transfer-amount" min="1"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="transfer-message" class="transfer-message"></p>
+    <form id="returnbutton" action="index.html" style="display: none;">
+        <button>Return to Home Page</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bills History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: auto;
+            width: 80%;
+        }
+        .bill-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .paid {
+            color: #4CAF50;
+        }
+        button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bills History</h1>
+    <div class="bill-container">
+        <table>
+            <tr>
+                <th>Bill Type</th>
+                <th>Payment Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Gas Bill</td>
+                <td>2023-05-05</td>
+                <td>$50</td>
+                <td class="paid">Paid</td>
+            </tr>
+            <tr>
+                <td>Electricity Bill</td>
+                <td>2023-05-10</td>
+                <td>$100</td>
+                <td class="paid">Paid</td>
+            </tr>
+            <tr>
+                <td>Water Bill</td>
+                <td>2023-05-15</td>
+                <td>$70</td>
+                <td class="paid">Paid</td>
+            </tr>
+            <tr>
+                <td>Telephone Bill</td>
+                <td>2023-05-20</td>
+                <td>$30</td>
+                <td class="paid">Paid</td>
+            </tr>
+            <tr>
+                <td>Loan Bill</td>
+                <td>2023-05-01</td>
+                <td>$200</td>
+                <td class="paid">Paid</td>
+            </tr>
+            <tr>
+                <td>Credit Card Bill</td>
+                <td>2023-05-25</td>
+                <td>$150</td>
+                <td class="paid">Paid</td>
+            </tr>
+        </table>
+    </div>
+    <form action="index.html">
+        <button>Return to Home Page</button>
+        </form>
+</body>
+</html>
