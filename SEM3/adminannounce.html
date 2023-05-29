@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Announcement</title>
+    <script type="text/javascript">
+        function submitForm(e) {
+            e.preventDefault();  //prevents reloading
+            let form = document.getElementById('myForm');
+            form.style.display = 'none';  
+            let message = document.getElementById('message');
+            message.style.display = 'block';  
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background-color: #1499db;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container button:hover {
+            opacity: 0.8;
+        }
+        #content{
+            width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+        }
+        #message {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Make a Technical Announcement</h2>
+        <form id="myForm" onsubmit="submitForm(event)">
+            <label for="title">Announcement Title:</label><br>
+  <input type="text" id="title" name="title" required><br>
+
+  <label for="content">Announcement Content:</label><br>
+  <textarea id="content" name="content" required></textarea><br>
+
+  <button type="submit">submit</button>
+</form>
+        
+                
+                <div id="message">
+                    <h1>Announcement sent</h1>
+                        <form action="admin.html">
+                            <button>Return to Home Page</button>
+                        </form>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
